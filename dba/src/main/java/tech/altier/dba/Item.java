@@ -2,11 +2,11 @@ package tech.altier.dba;
 
 public class Item {
 
-    private int id;
-    private String name;
-    private String description;
-    private int quantity;
-    private double price;
+    private final int id;
+    private final String name;
+    private final String description;
+    private final int quantity;
+    private final double price;
 
     public Item() {
         this.id = 0;
