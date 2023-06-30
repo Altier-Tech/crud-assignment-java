@@ -16,6 +16,8 @@ for a crud application
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
 <BorderPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.crudassignment.MainController">
    <top>
         <MenuBar BorderPane.alignment="CENTER">
@@ -33,4 +35,15 @@ for a crud application
              </menus>
         </MenuBar>
    </top>
+
+    <left>
+        <VBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="createButton" mnemonicParsing="false" onAction="#handleCreate" text="Create" />
+                <Button fx:id="readButton" mnemonicParsing="false" onAction="#handleRead" text="Read" />
+                <Button fx:id="updateButton" mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+            </children>
+        </VBox>
+    </left>
 </BorderPane>
