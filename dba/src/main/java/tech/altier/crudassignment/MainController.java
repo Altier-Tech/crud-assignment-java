@@ -1,5 +1,7 @@
 package tech.altier.crudassignment;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
@@ -7,9 +9,13 @@ import javafx.scene.control.TableView;
 import tech.altier.dba.Connector;
 import tech.altier.dba.Item;
 
+import java.util.Collections;
+
 public class MainController {
     @FXML
-    private TableView tableView;
+    private TableView<Item> tableView;
+
+    private ObservableList<Item> itemList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -21,9 +27,10 @@ public class MainController {
         Item[] items = Connector.getAllItems();
 
         // populate the table view with the items
-        for (Item item : items) {
-            tableView.getItems().add(item); // TODO: fix this
-        }
+        assert items != null;
+        Collections.addAll(itemList, items);
+
+        tableView.setItems(itemList);
     }
 
     public void handleExit(ActionEvent actionEvent) {
