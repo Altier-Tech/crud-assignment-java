@@ -17,6 +17,7 @@ import java.util.Collections;
 public class MainController {
     @FXML
     private TableView<Item> tableView;
+
     @FXML
     private TableColumn<Item, String> idColumn;
     @FXML
