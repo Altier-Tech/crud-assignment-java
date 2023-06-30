@@ -44,6 +44,7 @@ for a crud application
                 <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="Description" />
                 <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
                 <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
+                <TableColumn text="Controls" />
             </columns>
         </TableView>
     </center>
