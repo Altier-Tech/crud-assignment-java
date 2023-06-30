@@ -20,6 +20,10 @@ public class Connector {
         }
     }
 
+    public static Connection getConnection() {
+        return _connection;
+    }
+
     public static Item[] getAllItems() {
         // query the database for all items in the items table
         String SQL = "SELECT * FROM `inventory`.`items`;";
