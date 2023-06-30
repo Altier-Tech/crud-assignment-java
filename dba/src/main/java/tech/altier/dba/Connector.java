@@ -45,7 +45,7 @@ public class Connector {
         int count = getCount();
 
         // query the database for all items in the items table
-        String SQL = "SELECT * FROM `inventory`.`items`;";
+        String SQL = "SELECT * FROM `inventory`.`items`";
 
         Item[] items = new Item[count];
 
