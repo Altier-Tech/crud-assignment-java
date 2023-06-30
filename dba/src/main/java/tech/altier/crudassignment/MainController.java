@@ -51,6 +51,8 @@ public class MainController {
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("description"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Item, Integer>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Item, Double>("price"));
+
+        tableView.getItems().setAll(itemList);
     }
 
     public void handleExit(ActionEvent actionEvent) {
