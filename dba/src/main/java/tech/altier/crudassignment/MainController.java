@@ -3,14 +3,23 @@ package tech.altier.crudassignment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 
 public class MainController {
     @FXML
-    private Label welcomeText;
+    private TableView tableView;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void initialize() {
+        // need to populate the table view with the items from the database
+
+        // query the database
+
+
+        // create an array of items
+
+        // populate the table view with the items
+
     }
 
     public void handleExit(ActionEvent actionEvent) {
