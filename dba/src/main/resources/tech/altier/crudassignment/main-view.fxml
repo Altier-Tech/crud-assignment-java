@@ -37,7 +37,7 @@ for a crud application
    </top>
 
     <center>
-        <TableView>
+        <TableView fx:id="tableView">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
