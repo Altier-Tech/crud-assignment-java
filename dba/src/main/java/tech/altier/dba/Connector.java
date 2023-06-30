@@ -33,6 +33,9 @@ public class Connector {
     }
 
     public static Item[] getAllItems() {
+        // get number of items in the items table
+        int count = getCount();
+
         // query the database for all items in the items table
         String SQL = "SELECT * FROM `inventory`.`items`;";
         // execute query
