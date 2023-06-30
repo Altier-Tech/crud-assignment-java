@@ -20,6 +20,16 @@ public class Connector {
         }
     }
 
+    public static boolean closeConnection() {
+        try {
+            _connection.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static Connection getConnection() {
         return _connection;
     }
