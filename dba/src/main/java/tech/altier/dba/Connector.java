@@ -32,30 +32,53 @@ public class Connector {
         return _connection;
     }
 
+    private static int getCount() {
+        String SQL = "SELECT COUNT(*) FROM `inventory`.`items`;";
+        try {
+            var result = _connection.createStatement().executeQuery(SQL);
+            if (result.next()) {
+                return result.getInt(1);
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
     public static Item[] getAllItems() {
         // get number of items in the items table
         int count = getCount();
 
         // query the database for all items in the items table
         String SQL = "SELECT * FROM `inventory`.`items`;";
+
+        Item[] items = new Item[count];
+
         // execute query
         try {
             var result = _connection.createStatement().executeQuery(SQL);
-            // create an array of items
-            Item[] items = new Item[0];
-            // while there are more rows in the result
+
+            // loop through the result set
+            int i = 0;
             while (result.next()) {
                 // create a new item
-                Item[] newItems = new Item[items.length + 1];
-                // copy the old items into the new array
-                for (int i = 0; i < items.length; i++) {
-                    newItems[i] = items[i];
-                }
-                // add the new item to the end of the new array
-                newItems[newItems.length - 1] = new Item(result.getInt("id"), result.getString("name"), result.getString("description"), result.getInt("quantity"), result.getDouble("price"));
-                // set the items array to the new array
-                items = newItems;
+                Item item = new Item(
+                        result.getInt("id"),
+                        result.getString("name"),
+                        result.getString("description"),
+                        result.getInt("quantity"),
+                        result.getDouble("price")
+                );
+
+                // add the item to the items array
+                items[i] = item;
+
+                // increment the counter
+                i++;
             }
+
             // return the items array
             return items;
         } catch (SQLException e) {
