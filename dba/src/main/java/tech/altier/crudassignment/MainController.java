@@ -14,8 +14,10 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        // need to populate the table view with the items from the database
+        populate();
+    }
 
+    private void populate() {
         // query the database
         Item[] items = Connector.getAllItems();
 
