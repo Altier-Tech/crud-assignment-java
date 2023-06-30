@@ -34,16 +34,4 @@ public class MainController {
 
     public void handleAbout(ActionEvent actionEvent) {
     }
-
-    public void handleCreate(ActionEvent actionEvent) {
-    }
-
-    public void handleRead(ActionEvent actionEvent) {
-    }
-
-    public void handleUpdate(ActionEvent actionEvent) {
-    }
-
-    public void handleDelete(ActionEvent actionEvent) {
-    }
 }
