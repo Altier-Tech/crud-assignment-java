@@ -1,7 +1,9 @@
 package tech.altier;
 
-public class Main {
-    public static void main(String[] args) {
+import tech.altier.dba.Connector;
 
-    }
+import java.sql.Connection;
+
+public class Main {
+    public static Connection connection = Connector.getConnection();
 }
