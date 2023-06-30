@@ -52,7 +52,7 @@ for a crud application
                         </HBox>
                         <HBox>
                             <children>
-                                <>
+                                <Label text="ID" />
                                 <Label text="Name" />
                                 <Label text="Description" />
                                 <Label text="Quantity" />
