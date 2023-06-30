@@ -24,7 +24,17 @@ public class Connector {
         return delete(item.getId());
     }
 
-    
+    public static boolean delete(int id) {
+        String SQL = "DELETE FROM `inventory`.`items` WHERE (`id` = '" + id + "');";
+
+        try {
+            _connection.createStatement().execute(SQL);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public static boolean editItem(Item item) {
         return edit(item.getId(), item.getName(), item.getDescription(), item.getQuantity(), item.getPrice());
