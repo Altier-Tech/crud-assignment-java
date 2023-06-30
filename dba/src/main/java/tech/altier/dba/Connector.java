@@ -14,6 +14,7 @@ public class Connector {
     static {
         try {
             _connection = connect();
+            createTable();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -27,7 +28,7 @@ public class Connector {
                         "  `quantity` INT NOT NULL,\n" +
                         "  `price` DOUBLE NOT NULL,\n" +
                         "  PRIMARY KEY (`id`));";
-        
+
         try {
             _connection.createStatement().execute(SQL);
             return true;
