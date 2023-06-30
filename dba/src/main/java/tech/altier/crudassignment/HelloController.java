@@ -1,9 +1,9 @@
-package tech.altier.GUI;
+package tech.altier.crudassignment;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class UIController {
+public class HelloController {
     @FXML
     private Label welcomeText;
 
