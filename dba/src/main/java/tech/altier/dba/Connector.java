@@ -32,23 +32,15 @@ public class Connector {
         return _connection;
     }
 
-    private static int getCount() {
+    private static int getCount() throws SQLException {
         String SQL = "SELECT COUNT(*) FROM `inventory`.`items`;";
-        try {
-            var result = _connection.createStatement().executeQuery(SQL);
-            System.out.println("Number of columns: " + result.getInt(1));
-            if (result.next()) {
-                return result.getInt(1);
-            } else {
-                return 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return 0;
-        }
+        var result = _connection.createStatement().executeQuery(SQL);
+        result.next();
+        System.out.println("Number of records: " + result.getInt(1));
+        return result.getInt(1);
     }
 
-    public static Item[] getAllItems() {
+    public static Item[] getAllItems() throws SQLException {
         // get number of items in the items table
         int count = getCount();
 
@@ -152,7 +144,7 @@ public class Connector {
         }
     }
 
-    private static boolean createTable() {
+    private static void createTable() {
         String SQL =    "CREATE TABLE IF NOT EXISTS `inventory`.`items` (\n" +
                         "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
                         "  `name` VARCHAR(45) NOT NULL,\n" +
@@ -163,10 +155,8 @@ public class Connector {
 
         try {
             _connection.createStatement().execute(SQL);
-            return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
 
