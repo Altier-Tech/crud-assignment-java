@@ -28,6 +28,8 @@ public class MainController {
     }
 
     public void handleExit(ActionEvent actionEvent) {
+        Connector.closeConnection();
+        MainApplication.getStage().close();
     }
 
     public void handleAbout(ActionEvent actionEvent) {
