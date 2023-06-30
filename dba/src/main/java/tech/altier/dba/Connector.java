@@ -20,13 +20,11 @@ public class Connector {
         }
     }
 
-    public static boolean closeConnection() {
+    public static void closeConnection() {
         try {
             _connection.close();
-            return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
 
