@@ -41,17 +41,31 @@ for a crud application
             <ListView>
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Item 1" />
-                        <String fx:value="Item 2" />
-                        <String fx:value="Item 3" />
-                        <String fx:value="Item 4" />
-                        <String fx:value="Item 5" />
+                        <HBox>
+                            <children>
+                                <Label text="ID" />
+                                <Label text="Name" />
+                                <Label text="Description" />
+                                <Label text="Quantity" />
+                                <Label text="Price" />
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <>
+                                <Label text="Name" />
+                                <Label text="Description" />
+                                <Label text="Quantity" />
+                                <Label text="Price" />
+                            </children>
+                        </HBox>
                     </FXCollections>
                 </items>
             </ListView>
         </VBox>
     </center>
 
+    <!--
     <bottom>
         <HBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
@@ -62,4 +76,5 @@ for a crud application
             </children>
         </HBox>
     </bottom>
+    -->
 </BorderPane>
