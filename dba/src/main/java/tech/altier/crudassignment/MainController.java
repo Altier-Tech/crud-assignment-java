@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import tech.altier.dba.Connector;
 import tech.altier.dba.Item;
 
+import java.sql.SQLException;
 import java.util.Collections;
 
 public class MainController {
@@ -30,11 +31,11 @@ public class MainController {
     private ObservableList<Item> itemList = FXCollections.observableArrayList();
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
         populate();
     }
 
-    private void populate() {
+    private void populate() throws SQLException {
         // query the database
         Item[] items = Connector.getAllItems();
 
