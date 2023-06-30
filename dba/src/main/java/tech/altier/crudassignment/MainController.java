@@ -13,6 +13,7 @@ import tech.altier.dba.Item;
 
 import java.sql.SQLException;
 import java.util.Collections;
+import java.util.Objects;
 
 public class MainController {
     @FXML
@@ -29,22 +30,13 @@ public class MainController {
     @FXML
     private TableColumn<Item, Double> priceColumn;
 
-    private ObservableList<Item> itemList = FXCollections.observableArrayList();
-
     @FXML
     public void initialize() throws SQLException {
         populate();
     }
 
     private void populate() throws SQLException {
-        // query the database
         Item[] items = Connector.getAllItems();
-
-        // populate the table view with the items
-        assert items != null;
-        Collections.addAll(itemList, items);
-
-//        tableView.setItems(itemList);
 
         idColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("name"));
@@ -52,7 +44,9 @@ public class MainController {
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Item, Integer>("quantity"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Item, Double>("price"));
 
-        tableView.getItems().setAll(itemList);
+        for (int i = 0; i< Objects.requireNonNull(items).length; i++) {
+            tableView.getItems().set(i, items[i]);
+        }
     }
 
     public void handleExit(ActionEvent actionEvent) {
