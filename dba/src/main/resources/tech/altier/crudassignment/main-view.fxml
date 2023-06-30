@@ -39,7 +39,11 @@ for a crud application
     <center>
         <TableView fx:id="tableView">
             <columns>
-                <TableColumn fx:id="tableColumn" prefWidth="200" />
+                <TableColumn fx:id="idColumn" prefWidth="200" />
+                <TableColumn fx:id="nameColumn" prefWidth="200" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="200" />
+                <TableColumn fx:id="quantityColumn" prefWidth="200" />
+                <TableColumn fx:id="priceColumn" prefWidth="200" />
             </columns>
         </TableView>
     </center>
