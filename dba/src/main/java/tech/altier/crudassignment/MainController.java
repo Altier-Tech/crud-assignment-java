@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+import javafx.scene.control.cell.PropertyValueFactory;
 import tech.altier.dba.Connector;
 import tech.altier.dba.Item;
 
@@ -16,7 +17,7 @@ public class MainController {
     @FXML
     private TableView<Item> tableView;
     @FXML
-    private TableColumn<Item, Integer> idColumn;
+    private TableColumn<Item, String> idColumn;
     @FXML
     private TableColumn<Item, String> nameColumn;
     @FXML
@@ -41,7 +42,13 @@ public class MainController {
         assert items != null;
         Collections.addAll(itemList, items);
 
-        tableView.setItems(itemList);
+//        tableView.setItems(itemList);
+
+        idColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("id"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("name"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<Item, String>("description"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<Item, Integer>("quantity"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Item, Double>("price"));
     }
 
     public void handleExit(ActionEvent actionEvent) {
