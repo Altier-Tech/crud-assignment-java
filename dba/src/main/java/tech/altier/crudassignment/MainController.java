@@ -18,4 +18,7 @@ public class MainController {
 
     public void handleAbout(ActionEvent actionEvent) {
     }
+
+    public void handleCreate(ActionEvent actionEvent) {
+    }
 }
