@@ -15,6 +15,16 @@ import java.util.Collections;
 public class MainController {
     @FXML
     private TableView<Item> tableView;
+    @FXML
+    private TableColumn<Item, Integer> idColumn;
+    @FXML
+    private TableColumn<Item, String> nameColumn;
+    @FXML
+    private TableColumn<Item, String> descriptionColumn;
+    @FXML
+    private TableColumn<Item, Integer> quantityColumn;
+    @FXML
+    private TableColumn<Item, Double> priceColumn;
 
     private ObservableList<Item> itemList = FXCollections.observableArrayList();
 
