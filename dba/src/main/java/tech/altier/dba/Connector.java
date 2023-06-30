@@ -20,6 +20,35 @@ public class Connector {
         }
     }
 
+    public static Item[] getAllItems() {
+        // query the database for all items in the items table
+        String SQL = "SELECT * FROM `inventory`.`items`;";
+        // execute query
+        try {
+            var result = _connection.createStatement().executeQuery(SQL);
+            // create an array of items
+            Item[] items = new Item[0];
+            // while there are more rows in the result
+            while (result.next()) {
+                // create a new item
+                Item[] newItems = new Item[items.length + 1];
+                // copy the old items into the new array
+                for (int i = 0; i < items.length; i++) {
+                    newItems[i] = items[i];
+                }
+                // add the new item to the end of the new array
+                newItems[newItems.length - 1] = new Item(result.getInt("id"), result.getString("name"), result.getString("description"), result.getInt("quantity"), result.getDouble("price"));
+                // set the items array to the new array
+                items = newItems;
+            }
+            // return the items array
+            return items;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static boolean delete(Item item) {
         return delete(item.getId());
     }
