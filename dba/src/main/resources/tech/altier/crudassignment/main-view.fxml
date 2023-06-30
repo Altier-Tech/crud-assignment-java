@@ -37,32 +37,7 @@ for a crud application
    </top>
 
     <center>
-        <VBox fx:id="hbox" prefHeight="500.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <ListView>
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <HBox>
-                            <children>
-                                <Label text="ID" />
-                                <Label text="Name" />
-                                <Label text="Description" />
-                                <Label text="Quantity" />
-                                <Label text="Price" />
-                            </children>
-                        </HBox>
-                        <HBox>
-                            <children>
-                                <Label text="ID" />
-                                <Label text="Name" />
-                                <Label text="Description" />
-                                <Label text="Quantity" />
-                                <Label text="Price" />
-                            </children>
-                        </HBox>
-                    </FXCollections>
-                </items>
-            </ListView>
-        </VBox>
+        
     </center>
 
     <!--
