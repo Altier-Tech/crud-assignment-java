@@ -2,19 +2,6 @@ package tech.altier.dba;
 
 public class Item {
 
-    /*
-    this class is a data model for this entity:
-
-    items
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(45) NOT NULL,
-    `description` VARCHAR(45) NOT NULL,
-    `quantity` INT NOT NULL,
-    `price` DOUBLE NOT NULL,
-     PRIMARY KEY (`id`))
-
-     */
-
     private int id;
     private String name;
     private String description;
@@ -27,6 +14,15 @@ public class Item {
         this.description = "";
         this.quantity = 0;
         this.price = 0.0;
+    }
+
+    public Item(String sqlReturnString) {
+        String[] split = sqlReturnString.split(",");
+        this.id = Integer.parseInt(split[0]);
+        this.name = split[1];
+        this.description = split[2];
+        this.quantity = Integer.parseInt(split[3]);
+        this.price = Double.parseDouble(split[4]);
     }
 
     public Item(int id, String name, String description, int quantity, double price) {
