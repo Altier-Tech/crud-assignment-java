@@ -24,4 +24,7 @@ public class MainController {
 
     public void handleRead(ActionEvent actionEvent) {
     }
+
+    public void handleUpdate(ActionEvent actionEvent) {
+    }
 }
