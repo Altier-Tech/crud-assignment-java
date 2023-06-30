@@ -36,6 +36,7 @@ public class Connector {
         String SQL = "SELECT COUNT(*) FROM `inventory`.`items`;";
         try {
             var result = _connection.createStatement().executeQuery(SQL);
+            System.out.println("Number of columns: " + result.getInt(1));
             if (result.next()) {
                 return result.getInt(1);
             } else {
