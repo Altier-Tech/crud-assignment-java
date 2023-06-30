@@ -27,4 +27,7 @@ public class MainController {
 
     public void handleUpdate(ActionEvent actionEvent) {
     }
+
+    public void handleDelete(ActionEvent actionEvent) {
+    }
 }
