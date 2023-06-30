@@ -19,7 +19,25 @@ public class Connector {
             e.printStackTrace();
         }
     }
-    
+
+    public static 
+
+    public static boolean editItem(Item item) {
+        return edit(item.getId(), item.getName(), item.getDescription(), item.getQuantity(), item.getPrice());
+    }
+
+    public static boolean edit(int id, String name, String description, int quantity, double price) {
+        String SQL = "UPDATE `inventory`.`items` SET `name` = '" + name + "', `description` = '" + description + "', `quantity` = '" + quantity + "', `price` = '" + price + "' WHERE (`id` = '" + id + "');";
+
+        try {
+            _connection.createStatement().execute(SQL);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static Item getItemByID(int id) {
         String SQL = "SELECT * FROM `inventory`.`items` WHERE `id` = " + id + ";";
 
