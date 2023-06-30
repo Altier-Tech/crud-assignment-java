@@ -20,7 +20,11 @@ public class Connector {
         }
     }
 
-    public static 
+    public static boolean delete(Item item) {
+        return delete(item.getId());
+    }
+
+    
 
     public static boolean editItem(Item item) {
         return edit(item.getId(), item.getName(), item.getDescription(), item.getQuantity(), item.getPrice());
