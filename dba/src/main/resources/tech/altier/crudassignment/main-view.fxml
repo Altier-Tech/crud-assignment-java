@@ -16,6 +16,8 @@ for a crud application
 <?import javafx.scene.layout.HBox?>
 
 <?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <BorderPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.crudassignment.MainController">
    <top>
         <MenuBar BorderPane.alignment="CENTER">
@@ -35,19 +37,18 @@ for a crud application
    </top>
 
     <center>
-        <VBox fx:id="hbox" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label fx:id="idLabel" text="ID" />
-                <TextField fx:id="idField" />
-                <Label fx:id="nameLabel" text="Name" />
-                <TextField fx:id="nameField" />
-                <Label fx:id="descriptionLabel" text="Description" />
-                <TextField fx:id="descriptionField" />
-                <Label fx:id="quantityLabel" text="Quantity" />
-                <TextField fx:id="quantityField" />
-                <Label fx:id="priceLabel" text="Price" />
-                <TextField fx:id="priceField" />
-            </children>
+        <VBox fx:id="hbox" prefHeight="500.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ListView>
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Item 1" />
+                        <String fx:value="Item 2" />
+                        <String fx:value="Item 3" />
+                        <String fx:value="Item 4" />
+                        <String fx:value="Item 5" />
+                    </FXCollections>
+                </items>
+            </ListView>
         </VBox>
     </center>
 
