@@ -20,6 +20,9 @@ public class MainController {
     private void populate() {
         // query the database
         Item[] items = Connector.getAllItems();
+        for (Item item: items) {
+            System.out.println(item.getName());
+        }
 
         // populate the table view with the items
         for (Item item : items) {
