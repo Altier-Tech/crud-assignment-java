@@ -23,7 +23,7 @@ public class MainController {
 
         // populate the table view with the items
         for (Item item : items) {
-            tableView.getItems().add(item);
+            tableView.getItems().add(item); // TODO: fix this
         }
     }
 
