@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import tech.altier.Main;
 import tech.altier.dba.Connector;
+import tech.altier.dba.Item;
 
 public class MainController {
     @FXML
@@ -16,12 +17,12 @@ public class MainController {
         // need to populate the table view with the items from the database
 
         // query the database
-        Connector.getAllItems();
-
-        // create an array of items
+        Item[] items = Connector.getAllItems();
 
         // populate the table view with the items
-
+        for (Item item : items) {
+            tableView.getItems().add(item);
+        }
     }
 
     public void handleExit(ActionEvent actionEvent) {
