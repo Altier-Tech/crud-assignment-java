@@ -37,7 +37,7 @@ for a crud application
         </MenuBar>
    </top>
 
-    <left>
+    <bottom>
         <VBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="createButton" mnemonicParsing="false" onAction="#handleCreate" text="Create" />
@@ -46,5 +46,5 @@ for a crud application
                 <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
             </children>
         </VBox>
-    </left>
+    </bottom>
 </BorderPane>
